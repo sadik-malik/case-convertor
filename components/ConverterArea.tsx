@@ -68,7 +68,7 @@ const ConverterArea: React.FC<ConverterAreaProps> = ({
           onChange={(e) => setText(e.target.value)}
           placeholder="Type or paste your content here..."
           aria-label="Text to convert"
-          className="w-full h-96 p-6 bg-transparent text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none resize-none text-lg leading-relaxed transition-colors border-0"
+          className="w-full h-[296px] p-6 bg-transparent text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none resize-none text-lg leading-relaxed transition-colors border-0"
         />
         {copied && (
           <div className="absolute top-4 right-4 animate-in fade-in slide-in-from-top-2 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg z-10">
