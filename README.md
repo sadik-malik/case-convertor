@@ -12,11 +12,9 @@ A modern, fast, and privacy-focused online text case conversion utility.
 
 ## Built With
 
-- **React 19**
+- **Pug**
 - **Tailwind CSS**
-- **ESM.sh** (for dependency management)
-- **Google AI Studio**
 
 ---
 
-✨ **Vibe coded using Google AI Studio** ✨
+✨ **Initially vibe coded using Google AI Studio & Github Copilot** ✨
