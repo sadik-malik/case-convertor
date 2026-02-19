@@ -116,3 +116,6 @@ document.addEventListener('alpine:init', () => {
 })
 
 Alpine.start()
+
+// Initialize theme after Alpine starts
+Alpine.store('theme').init()
