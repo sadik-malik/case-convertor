@@ -18,10 +18,17 @@ document.addEventListener('alpine:init', () => {
 
     init() {
       this._apply(this.current)
+
       // Watch for OS-level preference changes when in system mode
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        if (this.current === 'system') this._apply('system')
-      })
+      const mq = window.matchMedia('(prefers-color-scheme: dark)')
+      const handler = () => { if (this.current === 'system') this._apply('system') }
+
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', handler)
+      } else if (typeof mq.addListener === 'function') {
+        // older browsers
+        mq.addListener(handler)
+      }
     },
 
     toggle() {
@@ -54,6 +61,9 @@ document.addEventListener('alpine:init', () => {
       return `Switch to ${next} mode`
     },
   })
+
+  // Initialize theme immediately after store creation to ensure UI picks up theme
+  Alpine.store('theme').init()
 
   // ─── Converter Store ───────────────────────────────────────────────────────
   Alpine.store('converter', {
